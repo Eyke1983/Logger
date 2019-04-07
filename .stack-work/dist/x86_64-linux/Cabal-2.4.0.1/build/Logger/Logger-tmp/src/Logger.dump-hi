@@ -1,0 +1,401 @@
+
+==================== FINAL INTERFACE ====================
+2019-04-07 16:27:21.290970888 UTC
+
+interface main:Logger 8064
+  interface hash: 6e24e6156c45361b35116c8fe4b1f2f9
+  ABI hash: 9aed3d55b8a4d50426a120cf7275ad75
+  export-list hash: 7ac2649a95f9d4c03b16116fa5594cbb
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: fcdcff9df05a4de25af06e622798515a
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Logger.printDebug
+  Logger.printError
+  Logger.printWarning
+  Logger.Level{Logger.Debug Logger.Error Logger.Warning}
+module dependencies:
+package dependencies: base-4.12.0.0* ghc-prim-0.5.3
+                      integer-gmp-1.0.2.0
+orphans: base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity base-4.12.0.0:Data.Monoid
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:GHC.Generics
+                         base-4.12.0.0:GHC.IO.Exception
+import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.Show 838a5d039379d82d9626aae53dfce276
+import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
+import  -/  ghc-prim-0.5.3:GHC.Classes 0f6fd7d7db53fc48f6e1f01803cc6c9d
+import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
+6c8515b89adc2dda651dc396ae907d88
+  $fEqLevel :: GHC.Classes.Eq Logger.Level
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Logger.Level Logger.$fEqLevel_$c== Logger.$fEqLevel_$c/= -}
+6c8515b89adc2dda651dc396ae907d88
+  $fEqLevel_$c/= :: Logger.Level -> Logger.Level -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Logger.Level) (y :: Logger.Level) ->
+                 case x of wild {
+                   Logger.Error
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True Logger.Error -> GHC.Types.False }
+                   Logger.Warning
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True Logger.Warning -> GHC.Types.False }
+                   Logger.Debug
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True Logger.Debug -> GHC.Types.False } }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fEqLevel_$c== :: Logger.Level -> Logger.Level -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Logger.Level) (ds1 :: Logger.Level) ->
+                 case ds of wild {
+                   Logger.Error
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Logger.Error -> GHC.Types.True }
+                   Logger.Warning
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Logger.Warning -> GHC.Types.True }
+                   Logger.Debug
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Logger.Debug -> GHC.Types.True } }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel :: GHC.Classes.Ord Logger.Level
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Logger.Level
+                  Logger.$fEqLevel
+                  Logger.$fOrdLevel_$ccompare
+                  Logger.$fOrdLevel_$c<
+                  Logger.$fOrdLevel_$c<=
+                  Logger.$fOrdLevel_$c>
+                  Logger.$fOrdLevel_$c>=
+                  Logger.$fOrdLevel_$cmax
+                  Logger.$fOrdLevel_$cmin -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel_$c< :: Logger.Level -> Logger.Level -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Logger.Level) (b :: Logger.Level) ->
+                 case a of wild {
+                   Logger.Error
+                   -> case b of wild1 {
+                        Logger.Error -> GHC.Types.False
+                        Logger.Warning -> GHC.Types.True
+                        Logger.Debug -> GHC.Types.True }
+                   Logger.Warning
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False Logger.Debug -> GHC.Types.True }
+                   Logger.Debug
+                   -> case b of wild1 { DEFAULT -> GHC.Types.False } }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel_$c<= :: Logger.Level -> Logger.Level -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Logger.Level) (b :: Logger.Level) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> GHC.Types.Bool
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case a of wild {
+                       Logger.Error
+                       -> case GHC.Prim.<# a# 0# of lwild {
+                            DEFAULT -> GHC.Types.True 1# -> GHC.Types.False }
+                       Logger.Warning
+                       -> case GHC.Prim.<# a# 1# of lwild {
+                            DEFAULT -> GHC.Types.True 1# -> GHC.Types.False }
+                       Logger.Debug
+                       -> case GHC.Prim.<# a# 2# of lwild {
+                            DEFAULT -> GHC.Types.True 1# -> GHC.Types.False } }
+                 } in
+                 case b of wild {
+                   Logger.Error -> $j 0#
+                   Logger.Warning -> $j 1#
+                   Logger.Debug -> $j 2# }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel_$c> :: Logger.Level -> Logger.Level -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (a :: Logger.Level) (b :: Logger.Level) ->
+                 Logger.$fOrdLevel_$c< b a) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel_$c>= :: Logger.Level -> Logger.Level -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Logger.Level) (b :: Logger.Level) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> GHC.Types.Bool
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case b of wild {
+                       Logger.Error
+                       -> case GHC.Prim.<# a# 0# of lwild {
+                            DEFAULT -> GHC.Types.True 1# -> GHC.Types.False }
+                       Logger.Warning
+                       -> case GHC.Prim.<# a# 1# of lwild {
+                            DEFAULT -> GHC.Types.True 1# -> GHC.Types.False }
+                       Logger.Debug
+                       -> case GHC.Prim.<# a# 2# of lwild {
+                            DEFAULT -> GHC.Types.True 1# -> GHC.Types.False } }
+                 } in
+                 case a of wild {
+                   Logger.Error -> $j 0#
+                   Logger.Warning -> $j 1#
+                   Logger.Debug -> $j 2# }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel_$ccompare ::
+    Logger.Level -> Logger.Level -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Logger.Level) (b :: Logger.Level) ->
+                 case a of wild {
+                   Logger.Error
+                   -> case b of wild1 {
+                        Logger.Error -> GHC.Types.EQ
+                        Logger.Warning -> GHC.Types.LT
+                        Logger.Debug -> GHC.Types.LT }
+                   Logger.Warning
+                   -> case b of wild1 {
+                        Logger.Error -> GHC.Types.GT
+                        Logger.Warning -> GHC.Types.EQ
+                        Logger.Debug -> GHC.Types.LT }
+                   Logger.Debug
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT Logger.Debug -> GHC.Types.EQ } }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel_$cmax :: Logger.Level -> Logger.Level -> Logger.Level
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Logger.Level) (y :: Logger.Level) ->
+                 case Logger.$fOrdLevel_$c<= x y of wild {
+                   GHC.Types.False -> x GHC.Types.True -> y }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fOrdLevel_$cmin :: Logger.Level -> Logger.Level -> Logger.Level
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Logger.Level) (y :: Logger.Level) ->
+                 case Logger.$fOrdLevel_$c<= x y of wild {
+                   GHC.Types.False -> y GHC.Types.True -> x }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fShowLevel :: GHC.Show.Show Logger.Level
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Logger.Level
+                  Logger.$fShowLevel_$cshowsPrec
+                  Logger.$fShowLevel_$cshow
+                  Logger.$fShowLevel_$cshowList -}
+2b6b83526f45e85152aba441b773cf60
+  $fShowLevel1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Logger.$fShowLevel2) -}
+2021d15614e0dc3bd8e281399bc1cdd7
+  $fShowLevel2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Debug"#) -}
+b7dab21d74c2f69c9f5ea87522e49242
+  $fShowLevel3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Logger.$fShowLevel4) -}
+074739e09b63787247ca24baee32c98d
+  $fShowLevel4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Warning"#) -}
+0ab203faa13fae6dd7f6736a7bded8a1
+  $fShowLevel5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Logger.$fShowLevel6) -}
+68e93a29b92393aee488cb818ffd9a90
+  $fShowLevel6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Error"#) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fShowLevel_$cshow :: Logger.Level -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Logger.Level) ->
+                 case x of wild {
+                   Logger.Error -> Logger.$fShowLevel5
+                   Logger.Warning -> Logger.$fShowLevel3
+                   Logger.Debug -> Logger.$fShowLevel1 }) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fShowLevel_$cshowList :: [Logger.Level] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Logger.Level]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Logger.Level Logger.$w$cshowsPrec ls s) -}
+6c8515b89adc2dda651dc396ae907d88
+  $fShowLevel_$cshowsPrec ::
+    GHC.Types.Int -> Logger.Level -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [2],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Logger.Level)
+                   (w2 :: GHC.Base.String) ->
+                 Logger.$w$cshowsPrec w1 w2) -}
+af279eceb760c5189184048785a798d4
+  $tc'Debug :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8856298661745230382##
+                   4487354099835666527##
+                   Logger.$trModule
+                   Logger.$tc'Debug2
+                   0#
+                   Logger.$tc'Debug1) -}
+6a88fa9125c5c534a2ed774b8879b69c
+  $tc'Debug1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+cbd284cb4c19fae7c53733bbacf15450
+  $tc'Debug2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Logger.$tc'Debug3) -}
+45e46b40eeee877dba263c0ebd8c791b
+  $tc'Debug3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Debug"#) -}
+e939cd01cda6af115f863db2f2490ea9
+  $tc'Error :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3533174185884979996##
+                   2288807542743173796##
+                   Logger.$trModule
+                   Logger.$tc'Error1
+                   0#
+                   Logger.$tc'Debug1) -}
+daa83ae065fe19cc5651769d0d8b2157
+  $tc'Error1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Logger.$tc'Error2) -}
+da12fbf14a9bb3d0414bffb86c151e7a
+  $tc'Error2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Error"#) -}
+7951b8f52c2ec9b461c1a3b924e198fc
+  $tc'Warning :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1628626977675404546##
+                   1073263535241090974##
+                   Logger.$trModule
+                   Logger.$tc'Warning1
+                   0#
+                   Logger.$tc'Debug1) -}
+ef0471021655534628fa7e5061ab921d
+  $tc'Warning1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Logger.$tc'Warning2) -}
+c8cb61e31981f051cf0e2ce330697970
+  $tc'Warning2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Warning"#) -}
+1c64eaf4294f444472ea0b9444f887fc
+  $tcLevel :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14003925115453746555##
+                   4441064559730325337##
+                   Logger.$trModule
+                   Logger.$tcLevel1
+                   0#
+                   GHC.Types.krep$*) -}
+8cdbd4e44e833d1bb5aa57a4b03255c3
+  $tcLevel1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Logger.$tcLevel2) -}
+4d0e54639763599aea54f1f6b47dbafd
+  $tcLevel2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Level"#) -}
+2bcd3199cac64e63d60aac2aeeed129f
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Logger.$trModule3
+                   Logger.$trModule1) -}
+d37b813e4f3931460d0d152880099a82
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Logger.$trModule2) -}
+7aa14aedd2e7fd19ed0e03c3cf082e5d
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Logger"#) -}
+c0a859c68d81167d764c8db5aed83f9f
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Logger.$trModule4) -}
+422052f0f3ce1eeb2247a011ab797396
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+6c8515b89adc2dda651dc396ae907d88
+  $w$cshowsPrec :: Logger.Level -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [2],
+     Unfolding: (\ (w :: Logger.Level) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Logger.Error -> GHC.Base.++ @ GHC.Types.Char Logger.$fShowLevel5 w1
+                   Logger.Warning
+                   -> GHC.Base.++ @ GHC.Types.Char Logger.$fShowLevel3 w1
+                   Logger.Debug
+                   -> GHC.Base.++ @ GHC.Types.Char Logger.$fShowLevel1 w1 }) -}
+6c8515b89adc2dda651dc396ae907d88
+  data Level = Error | Warning | Debug
+ea807fcdc17f0ac6a3e7792bee0bb47a
+  createLog ::
+    Logger.Level -> Logger.Level -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,1*U><S,U><L,1*U>,
+     Unfolding: (\ (lvlLogger :: Logger.Level)
+                   (lvlMsg :: Logger.Level)
+                   (msgText :: GHC.Base.String) ->
+                 case Logger.$fOrdLevel_$c>= lvlLogger lvlMsg of wild {
+                   GHC.Types.False -> GHC.Types.[] @ GHC.Types.Char
+                   GHC.Types.True
+                   -> case lvlMsg of wild1 {
+                        Logger.Error
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             Logger.$fShowLevel5
+                             (GHC.CString.unpackAppendCString#
+                                Logger.printDebug3
+                                (GHC.Base.++ @ GHC.Types.Char msgText Logger.printDebug1))
+                        Logger.Warning
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             Logger.$fShowLevel3
+                             (GHC.CString.unpackAppendCString#
+                                Logger.printDebug3
+                                (GHC.Base.++ @ GHC.Types.Char msgText Logger.printDebug1))
+                        Logger.Debug
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             Logger.$fShowLevel1
+                             (GHC.CString.unpackAppendCString#
+                                Logger.printDebug3
+                                (GHC.Base.++ @ GHC.Types.Char msgText Logger.printDebug1)) } }) -}
+f3e1f80c7d7eb957d2e62e76d1da9eea
+  printDebug :: Logger.Level -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Unfolding: (Logger.createLog Logger.Debug) -}
+bb610db97766029d0fadcb27c65bc998
+  printDebug1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Logger.printDebug2) -}
+1809bc6e121970f31f86f8963e5f754e
+  printDebug2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: (" \n"#) -}
+ec49bf5a341a65e5d37161e62d18dffb
+  printDebug3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: (" "#) -}
+018de4a1789f04e584eaa886156ac76a
+  printError :: Logger.Level -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Unfolding: (Logger.createLog Logger.Error) -}
+307de925669f2914d18dd6dc7b732b16
+  printWarning :: Logger.Level -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Unfolding: (Logger.createLog Logger.Warning) -}
+instance [safe] GHC.Classes.Eq [Logger.Level] = Logger.$fEqLevel
+instance [safe] GHC.Classes.Ord [Logger.Level] = Logger.$fOrdLevel
+instance [safe] GHC.Show.Show [Logger.Level] = Logger.$fShowLevel
+trusted: safe
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+
